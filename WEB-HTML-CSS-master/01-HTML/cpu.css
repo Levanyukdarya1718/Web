@@ -1,0 +1,47 @@
+﻿body
+{
+    background-color:#323232;
+    color:gray;
+   /*font-family:'Segoe UI';*/
+
+}
+h4
+{
+    text-align:right;
+}
+p
+{
+    text-align: justify;
+    font-size: 10pt;
+    font-family: sans-serif;
+    font-family: Comfortaa;
+}
+ol
+{
+    list-style-type:upper-roman;
+}
+.nesting-lvl-1
+{
+    list-style-type:circle;
+}
+.nesting-lvl-2
+{
+    list-style-type:" ~ ";
+
+}
+figure
+{
+    Text-align:center;
+}
+a
+{
+    color:aliceblue;
+}
+a:hover, a:hover:visited
+{
+    color: blue;
+}
+a:visited
+{
+    color:green;
+}
