@@ -1,0 +1,8 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Playpen+Sans:wght@100..800&display=swap');
+body
+{
+    font-family: Comfortaa;
+    font-size: 32px;
+    background-image: linear-gradient(to right, violet, aquamarine);
+}
