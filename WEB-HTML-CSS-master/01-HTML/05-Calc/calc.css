@@ -199,6 +199,7 @@ input[type=text]
 {
 	display: flex;
 	justify-content: left;
+
 }
 
 	.buttons button
@@ -206,9 +207,21 @@ input[type=text]
 		width: 50px;
 		height: 40px;
 		margin: 5px;
-		/*border:solid 1px darkblue;
-		border-radius:5px;*/
+		border:solid 1px darkblue;
+		border-radius:5px;
+		box-shadow: inset 0px -3px 5px  1px lightgrey;
+
 	}
+		.buttons button:hover
+		{
+			background-color: lightgray;
+			box-shadow: inset 0px 0px 2px 1px #FFAA00;
+			
+		}
+		.buttons button:active
+		{
+			box-shadow: inset 0px 0px 0px 1px grey;
+		}
 
 .memory-buttons
 {
@@ -225,7 +238,7 @@ input[type=text]
 	
 }
 
-	.memory-buttons > button
+	.memory-buttons > button, .operational-buttons >button
 	{
 		color: red;
 	}
@@ -270,7 +283,7 @@ input[type=text]
 	{
 		color: darkblue;
 	}
-.operational-buttons, resulta
+.operational-buttons, results
 {
 	display:grid;
 	grid-template-columns:50px;
@@ -279,4 +292,7 @@ input[type=text]
 	margin-left:10px;
 	
 }
-.
+/*buttons button
+{
+	box-shadow: inherit 0 0 3px 3px grey;
+}*/
