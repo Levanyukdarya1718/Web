@@ -82,3 +82,58 @@ function addLeadingZero(number)
 {
 	return number < 10 ? "0" + number : number;
 }
+document.getElementById("btn-start").onclick = function startCountdownTimeer()
+{
+	let targetDate = document.getElementById("target-date");
+	let targetTame = document.getElementById("target-time");
+
+	let btnStart = document.getElementById("btn-start");
+	targetDate.disabled = targetTame.disabled = !targetDate.disabled;
+
+	if (btnStart.value === "Start")
+	{
+		btnStart.value = "Stop";
+		tickCountdown();
+	}
+    else
+	{
+		btnStart.value = "Start";
+    }
+}
+function tickCountdown()
+{
+	if (!document.getElementById("target-time").disabled) return;
+	let now = new Date();
+	console.log(`now.getTimezoneOffset: \t${ now.getTimezoneOffset() }`);
+	let targetDateControl = document.getElementById("target-date");
+	let targetTimeControl = document.getElementById("target-time");
+	let targetDate = targetDateControl.valueAsDate;
+	let targetTime = targetTimeControl.valueAsDate;
+
+	//выравниваем часовой пояс
+	targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
+	targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
+
+	//приводим дату в целевом времени к выбранной дате
+	targetTime.setFullYear(targetDate.getFullYear());
+	targetTime.setMonth(targetDate.getMonth());
+	targetTime.setDate(targetDate.getDate());
+
+
+	//определяем промежуток времени до указанной даты
+	let duration = targetTime - now;//разность вычисляется в формате Timestamp
+	document.getElementById("duration").innerHTML = duration;
+	//Timestaml -это колличество миллисекунд от 1 января 1970.
+
+	let timestump = Math.trunc(duration / 1000);
+	document.getElementById("timestamp").innerHTML = timestump;
+
+	//определяем целевую дату/время и промежуток на страницы
+	document.getElementById("target-date-value").innerHTML = targetDate;
+	document.getElementById("target-time-value").innerHTML = targetTime;
+
+	console.log(`now.getTimezoneOffset: \t${now.getTimezoneOffset()}`);
+
+	setTimeout(tickCountdown, 100);
+
+}
